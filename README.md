@@ -20,40 +20,39 @@ AI-SDLC/
 
 ## Quick Start
 
-### Option 1: Complete Workflow (Recommended)
-
 **Step 1: Initialize Project**
 ```bash
 python Umbrella/1-start-project.py
 ```
-Creates folder structure, initializes Git, sets up SESSION-STATUS.md, and loads AI rules into .amazonq/rules/ for Amazon Q access
+Creates folder structure, initializes Git, sets up SESSION-STATUS.md, and loads AI rules into .amazonq/rules/
 
-**Step 2: Daily Work Cycle**
+**Step 2: Linear Phases (1-3)**
 ```bash
-# Check current status
-python Umbrella/2-resume-project.py
-
-# Work with AI using phase rules (e.g., phase1-planning-rules.md)
-# Create required deliverables in appropriate phase folder
-
-# Validate phase completion
-python Umbrella/3-validate-phase.py
-
-# Save progress at end of session
-python Umbrella/4-pause-project.py
+# Work through phases sequentially
+python Umbrella/2-resume-project.py    # Check status
+# Complete Phase 1: Planning
+# Complete Phase 2: Requirements  
+# Complete Phase 3: Design
+python Umbrella/3-validate-phase.py    # Validate completion
 ```
 
-**Step 3: Project Completion**
+**Step 3: Iterative Phases (4-6)**
 ```bash
-python Umbrella/5-end-project.py
+# Component-based iterative development
+# For each component: Develop → Test → Deploy
+python Umbrella/3-validate-phase.py    # Track component status
 ```
-Creates final commit, release tag, and completion summary
 
-### Option 2: Template-Only Approach
+**Step 4: Save Progress**
+```bash
+python Umbrella/4-pause-project.py     # End session
+python Umbrella/5-end-project.py       # Complete project
+```
 
-1. **Copy template**: `cp Umbrella/ai-sdlc-prompt-template.md my-project.md`
-2. **Fill requirements**: Replace all `[bracketed placeholders]` with your needs
-3. **Execute with AI**: Work through all 7 phases with your AI assistant
+### Template Approach
+1. Copy `Umbrella/ai-sdlc-prompt-template.md`
+2. Replace `[bracketed placeholders]` with requirements
+3. Execute with AI assistant
 
 ## Core Principles
 
